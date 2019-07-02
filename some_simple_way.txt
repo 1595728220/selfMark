@@ -1,0 +1,1 @@
+1.筛选一个数组中所有的真值 arr.filter(Boolean) 完整写法 arr.filter(el=>Boolean(el))
