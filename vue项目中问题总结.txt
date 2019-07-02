@@ -35,19 +35,25 @@ SELECT FOUND_ROWS();执行一次查询同时获得数据，该方法查询效率
 17.在将请求用户登录状态的方法转移到vuex仓库中时，无法this.$axios报错，原因为即使已经在 main.js 中引入了 axios，并改写了原型链，也无法在 store.js 中直接使用 $ajax 命令，需要在Vuex中再次引入axios模块import axios from 'axios'
 
 18.可以通过在组件中添加计算属性返回一个vuex仓库中的变量，并在之后监听该计算属性，就可以实现对vuex仓库中的变量进行监控
+
 19.由于 JavaScript 的限制，Vue 不能检测以下变动的数组：当你利用索引直接设置一个项时，例如：vm.items[indexOfItem] = newValue,当你修改数组的长度时，例如：vm.items.length = newLength
+
 21.vuex中存储的数据再f5刷新后会初始化state导致数据丢失，解决的方法是使用别人封装的插件vuex-persistedstate，将要丢失的数据暂时保存在sessionStorage.
+
 22.在移动端引入vue-lazyload 参考http://www.qiutianaimeili.com/html/page/2018/08/fmo2p56v6ms.html 个人总结一下，首先v-infinite-scroll是该组件要触发的事件，当滚动到距离底部infinite-scroll-distance中对应的像素值时触发时间，而infinite-scroll-disabled="moreLoading" 该属性需要绑定一个bool类型的变量，为false时事件可以被触发，而为true时事件无法触发，所以在数据加载完时需要将该变量设为true，有一点需要注意的是，该组件要求所在的元素占父元素高度的100%才能生效，解决的办法是添加样式max-height: 100vh; overflow-y: auto;该组件可以配合mt-spinner使用，需要在要加载数据时将moreLoading改为true,显示等待图标，请求完成后再将值改回false，隐藏图标。
+
 23.在vuex中如果想在actions中发送axios请求，这时请求的参数如果是state中的数据时需要使用context.state.属性名获取，否则无法获取最新的属性值，造成错误，然后mutations 有一个固有参数 state，接收的是 Vuex 中的 state 对象，action 也有一个固有参数 context，但是 context 是 state 的父级，包含  state、getters
 
-24.引入better-scroll 参考https://blog.csdn.net/abcde158308/article/details/82665386
-http://www.imooc.com/article/18232
-https://ustbhuangyi.github.io/better-scroll/doc/zh-hans/installation.html
 25.在使用第三方组件库的时候，如果在scoped的css作用域中无法修改组件的样式时可以使用 /deep/ 或 >>> 深度修改样式，>>>有时无法被scss解析器解释，可以使用/deep/代替
+
 26.在使用滚动条的时候，如果出现原的滚动条变长，内容错位，可能就是body的滚动条和自己设置的滚动条之间产生了冲突，目前解决办法是将body的overflow:hidden
+
 27.在infiScroll子组件中，执行查询产品列表的操作，防止重复代码，但是产品查询参数的初始化不应该放在该组件中，因为较难控制其执行的顺序，现在是在修改产品查询参数之前就做一次初始化，如果查询条件不想叠加时
+
 28.在使用v-lazy时如果是面板切换很容易不加载图片，因为面板切换时，是不会重新请求数据的，所以在面板切换的地方不推荐使用v-lazy
-29.在路由传参时params必须用name来识别路径
-30.由于产品详情页中的后退是返回上一个页面，所有没事别跳回产品详情页。
-31.在vuex中想异步执行一个函数，可以在actions中定义方法返回一个promise,作为回调在想要执行的地方执行
+
+29.在路由传参时params必须用name来识别路径,path搭配query使用,有一个布尔模式是在配置路由词典时给路由对象设置props:true,使得params中的参数存入组件的props属性
+
+31.在vuex中想异步执行一个函数，可以在actions中定义方法返回一个promise,通过回调执行指定的方法
+
 32.过滤器可以用于插值语法和属性绑定中
