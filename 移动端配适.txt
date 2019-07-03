@@ -1,0 +1,7 @@
+在移动端由于设备尺寸的不同，需要对其进行适配。
+首先视口分为三种
+1.布局视口，指的是页面的完整宽度，document.documentElement.clientWidth获取视口的宽度
+2.视觉视口，指用户通过屏幕真实看到的区域，可以通过放大改变该视口大小，window.innerWidth获取视觉视口的宽度
+3.理想视口，指页面在移动端展示的理想大小，screen.width可以获取理想视口的宽度
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;">
+为了让网页有更好的显示效果，必须让布局视口和视觉视口尽量等于理想视口 width=device-width 就相当于让布局视口等于理想视口 initial-scale=1表示视觉视口等于理想视口
