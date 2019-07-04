@@ -5,5 +5,8 @@
     3.理想视口，指页面在移动端展示的理想大小，screen.width可以获取理想视口的宽度
 <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;">
 为了让网页有更好的显示效果，必须让布局视口和视觉视口尽量等于理想视口 width=device-width 就相当于让布局视口等于理想视口 initial-scale=1表示视觉视口等于理想视口
-
+在移动端的像素有以下几种
+物理像素(设备像素) 设备真实的物理像素点
+css像素 在css中设置的像素，
+一般在移动端1px的css像素对应着1px物理像素，但是如果用户通过放大网页后，css像素和物理像素的比值会发生改变，1px的css像素需要由更多的物理像素点来表现。而两者的比例就是dpr，在移动端dpr一般不为1
 
