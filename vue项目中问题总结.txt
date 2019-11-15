@@ -67,3 +67,19 @@ SELECT FOUND_ROWS();执行一次查询同时获得数据，该方法查询效率
 36.通过路由传递的参数，即使传递的是数字，第一次接收也为数字，但是f5后从地址栏获取时变为字符串
 
 37.通过text-indent属性可以设置一段文字的缩进，配合em可以实现
+
+38.v-html中不能通过过滤器对要渲染的内容进行过滤，可以通过声明一个方法对文本进行处理
+
+39.在表格中table-layout:fixed 会根据第一行的td宽度去决定其他行的td宽度
+
+40.在使用iview的表单进行验证时，疑似会根据初试的form表单结构记录会验证的表单位置，表单改变时，如果其他位置的表单需要进行验证就无法实现，可以在对应位置的初试表单位置添加一个prop属性，对应的规则为空。
+41.iview中进行表单验证时，自定义验证方法不要引用vuex中的变量，取不到值
+42.在使用new Date时 "2019-1-1" 会被转为当天的8点 "2019/1/1" 会被转为当天 0点
+43.vue-cli3中静态资源不放在static文件夹中，直接放在public文件夹中
+44.文字溢出两行 word-break: break-all;
+            text-overflow: ellipsis;
+            display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+            -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+            -webkit-line-clamp: 2; /** 显示的行数 **/
+            overflow: hidden; /** 隐藏超出的内容 **/
+45.beforeRouteEnter中的next()方法执行在mounted之后
