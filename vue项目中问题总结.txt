@@ -83,3 +83,5 @@ SELECT FOUND_ROWS();执行一次查询同时获得数据，该方法查询效率
             -webkit-line-clamp: 2; /** 显示的行数 **/
             overflow: hidden; /** 隐藏超出的内容 **/
 45.beforeRouteEnter中的next()方法执行在mounted之后
+
+46.使用flex布局时，如果要控制换行的子元素之间的垂直间距可以给子元素设置下边距，给容器设置负的下边距
