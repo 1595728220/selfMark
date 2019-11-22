@@ -162,7 +162,7 @@ export default {
       }
     })()
     /**
-     * 交换给定数组的给定两位置的元素后返回置换后的新数组
+     * 将下标为index1的元素插入到index2中返回数组
      */
     Vue.prototype.$displace = (index1, index2, array) => {
       let newArray = [...array], tmpVal = newArray[index1],
