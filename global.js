@@ -191,6 +191,11 @@ export default {
           return
         }
         return [...list.slice(0, index), ...list.slice(index + 1, list.length)]
+      },
+      // 对传入的参数按指定的标签进行拼接
+      Vue.prototype.$splicing = (tag, ...arr) => {
+        arr = arr.filter(el => el)
+        return arr.join(tag)
       }
   }
 };
