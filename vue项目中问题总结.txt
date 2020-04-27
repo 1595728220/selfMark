@@ -89,3 +89,20 @@ SELECT FOUND_ROWS();执行一次查询同时获得数据，该方法查询效率
 47.新版sass-loader 配置全局scss文件时改用prependData: `@import "~@/assets/scss/variables.scss";`
 
 48.新建的vue-cli3项目可以通过手动创建vue.config.js来配置项目
+
+49. 计算属性 getValue: state => value => { return value } 可以给getters传入参数
+
+50.在按需引入组件库时，如果可以通过插件babel-plugin-import,配置babel.config.js文件,简化引入写法，plugins: [
+    [
+      "import",
+      {
+        // 库名
+        libraryName: "vant",
+        // 库样式文件夹名默认lib
+        libraryDirectory: "es",
+        // 是否自动引入样式文件
+        // style: true
+      },
+      "vant"
+    ]
+  ]
