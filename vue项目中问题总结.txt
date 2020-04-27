@@ -90,7 +90,7 @@ SELECT FOUND_ROWS();执行一次查询同时获得数据，该方法查询效率
 
 48.新建的vue-cli3项目可以通过手动创建vue.config.js来配置项目
 
-49. 计算属性 getValue: state => value => { return value } 可以给getters传入参数
+49. vuex计算属性 getValue: state => value => { return value } 可以给getters传入参数
 
 50.在按需引入组件库时，如果可以通过插件babel-plugin-import,配置babel.config.js文件,简化引入写法，plugins: [
     [
